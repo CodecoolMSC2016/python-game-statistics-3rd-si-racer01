@@ -5,5 +5,7 @@
 import reports
 
 file_name = "game_stat.txt"
+year = 2009
 
 print(reports.count_games(file_name))
+print(reports.decide(file_name, year))
