@@ -9,3 +9,4 @@ year = 2009
 
 print("1.", reports.count_games(file_name))
 print("  ", reports.decide(file_name, int(input("2. Which year? "))))
+print("3.", reports.get_latest(file_name))
