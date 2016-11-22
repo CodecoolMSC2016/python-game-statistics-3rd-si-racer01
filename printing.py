@@ -7,5 +7,5 @@ import reports
 file_name = "game_stat.txt"
 year = 2009
 
-print(reports.count_games(file_name))
-print(reports.decide(file_name, year))
+print("1.", reports.count_games(file_name))
+print("  ", reports.decide(file_name, int(input("2. Which year? "))))
