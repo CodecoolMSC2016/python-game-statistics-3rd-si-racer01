@@ -5,6 +5,7 @@
 
 def count_games(file_name):  # 1. How many games are in the file?
     """ Returns how many games are in the file """
+    line_counter = 0
     with open(file_name) as f:
-        data_list = [line.strip().split('\t') for line in f]
-    return len(data_list)
+        line_counter = len(f.readlines())
+    return line_counter
