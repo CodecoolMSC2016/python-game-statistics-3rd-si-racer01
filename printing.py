@@ -39,5 +39,9 @@ def printing():
         print("  ", reports.count_by_genre(file_name, genre))
         title = input("5. Which title? ")
         print("  ", reports.get_line_number_by_title(file_name, title))
+        # BONUS
+        print("B-1. Sorted titles: ")
+        for line in reports.sort_abc(file_name):
+            print("   " + line)
 
 printing()
