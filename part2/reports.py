@@ -18,8 +18,10 @@ def sum_sold(file_name):  # 2. How many copies have been sold total?
 
 
 def get_selling_avg(file_name):  # 3. What is the average selling?
-    return int()
-    # Other expectation: if there is more than one, then return the first from the file
+    with open(file_name) as f:
+        selling_list = [float(line.split('\t')[1].strip()) for line in f]
+    avg_selling = sum(selling_list) / len(selling_list)
+    return avg_selling
 
 
 def count_longest_title(file_name):  # 4. How many characters long is the longest title?
