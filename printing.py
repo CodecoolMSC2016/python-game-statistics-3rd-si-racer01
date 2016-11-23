@@ -24,6 +24,8 @@ def check_file(file_name, fallback_file_name=""):
 def printing():
     fallback_file_name = "game_stat.txt"
     file_name = input("Which file should I analyze? (default: game_stat.txt) ")
+    if not file_name:
+        file_name = fallback_file_name
     try:
         file_name = check_file(file_name, fallback_file_name)
     except FileNotFoundError as e:
