@@ -47,11 +47,16 @@ def export():
             export_file.write("5. What is the average of the release dates? " +
                               str(reports.get_date_avg(file_name)) + '\n')
             export_file.write("6. What properties has %s?" % title + '\n')
-            export_file.write("   Name: " + reports.get_game(file_name, title)[0] + '\n')
-            export_file.write("   Million sold: " + str(reports.get_game(file_name, title)[1]) + '\n')
-            export_file.write("   Release date: " + str(reports.get_game(file_name, title)[2]) + '\n')
-            export_file.write("   Genre: " + reports.get_game(file_name, title)[3] + '\n')
-            export_file.write("   Publisher: " + reports.get_game(file_name, title)[4] + '\n')
+            export_file.write("    Name: " + reports.get_game(file_name, title)[0] + '\n')
+            export_file.write("    Million sold: " + str(reports.get_game(file_name, title)[1]) + '\n')
+            export_file.write("    Release date: " + str(reports.get_game(file_name, title)[2]) + '\n')
+            export_file.write("    Genre: " + reports.get_game(file_name, title)[3] + '\n')
+            export_file.write("    Publisher: " + reports.get_game(file_name, title)[4] + '\n')
+            export_file.write("B-1. How many games are there grouped by genre?" + '\n')
+            count_by_genre = reports.count_grouped_by_genre(file_name)
+            for key in count_by_genre:
+                export_file.write("    " + str(count_by_genre[key]) + " " + key + '\n')
+            del count_by_genre
 
 if __name__ == "__main__":
     export()

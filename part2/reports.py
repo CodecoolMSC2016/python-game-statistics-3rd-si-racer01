@@ -47,7 +47,15 @@ def get_game(file_name, title):  # 6. What properties has a game?
 
 
 def count_grouped_by_genre(file_name):  # B-1. How many games are there grouped by genre?
-    return dict()
+    count_by_genre = dict()
+    with open(file_name) as f:
+        for line in f:
+            current_game = [data.strip() for data in line.split('\t')]
+            if current_game[3] in count_by_genre:
+                count_by_genre[current_game[3]] += 1
+            else:
+                count_by_genre[current_game[3]] = 1
+    return count_by_genre
     # Expected output of the function: a dictionary with this structure: { [genre] : [count] }
     # Detailed description: return a dictionary where each genre is associated with the count of the games of its genre
 

@@ -38,6 +38,10 @@ def printing():
         print("5.", reports.get_date_avg(file_name))
         title = input("6. Which game? ")
         print("  ", reports.get_game(file_name, title))
+        print("B-1.")
+        count_by_genre = reports.count_grouped_by_genre(file_name)
+        for key in count_by_genre:
+            print("  ", count_by_genre[key], key)
 
 if __name__ == "__main__":
     printing()
