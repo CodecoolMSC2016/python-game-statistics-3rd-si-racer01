@@ -40,9 +40,16 @@ def export():
         with open("export.txt", 'a') as export_file:
             export_file.write("1. question: " + str(reports.count_games(file_name)) + '\n')
             export_file.write("2. question: " + str(reports.decide(file_name, year)) + '\n')
-            export_file.write("3. question: " + str(reports.get_latest(file_name)) + '\n')
+            export_file.write("3. question: " + reports.get_latest(file_name) + '\n')
             export_file.write("4. question: " + str(reports.count_by_genre(file_name, genre)) + '\n')
             export_file.write("5. question: " + str(reports.get_line_number_by_title(file_name, title)) + '\n')
+            export_file.write("B-1. Sorted titles:" + '\n')
+            for line in reports.sort_abc(file_name):
+                export_file.write("   " + line + '\n')
+            export_file.write("B-2. Genres:" + '\n')
+            for line in reports.get_genres(file_name):
+                export_file.write("   " + line + '\n')
+            export_file.write("B-3. question: " + str(reports.when_was_top_sold_fps(file_name)) + '\n')
 
 
 export()
