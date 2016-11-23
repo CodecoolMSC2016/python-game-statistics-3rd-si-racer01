@@ -46,5 +46,6 @@ def printing():
         print("B-2. Genres:")
         for line in reports.get_genres(file_name):
             print("   " + line)
+        print("B-3.", reports.when_was_top_sold_fps(file_name))
 
 printing()

@@ -67,3 +67,15 @@ def get_genres(file_name):  # B-2. What are the genres?
                 genre_list.append(genre)
     genre_list.sort(key=lambda genre: genre.lower())
     return genre_list
+
+
+def when_was_top_sold_fps(file_name):  # B-3. What is the release date of the top sold "First-person shooter" game?
+    """ Returns the release date of the top sold FPS game """
+    fps_top = []
+    with open(file_name) as f:
+        fps_top = [(float(line.split('\t')[1].strip()), int(line.split('\t')[2].strip())) for line in f
+                   if line.split('\t')[3].strip() == "First-person shooter"]
+    if not fps_top:
+        raise ValueError
+    fps_top.sort(key=lambda data: data[0], reverse=True)
+    return fps_top[0][1]
