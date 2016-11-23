@@ -42,6 +42,10 @@ def printing():
         count_by_genre = reports.count_grouped_by_genre(file_name)
         for key in count_by_genre:
             print("  ", count_by_genre[key], key)
+        titles_ordered_by_date = reports.get_date_ordered(file_name)
+        print("B-2.")
+        for title in titles_ordered_by_date:
+            print("  ", title)
 
 if __name__ == "__main__":
     printing()

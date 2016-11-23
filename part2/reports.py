@@ -56,12 +56,14 @@ def count_grouped_by_genre(file_name):  # B-1. How many games are there grouped 
             else:
                 count_by_genre[current_game[3]] = 1
     return count_by_genre
-    # Expected output of the function: a dictionary with this structure: { [genre] : [count] }
-    # Detailed description: return a dictionary where each genre is associated with the count of the games of its genre
 
 
 def get_date_ordered(file_name):  # B-2. What is the date ordered list of the games?
-    return list()
+    with open(file_name) as f:
+        data_list = [(line.split('\t')[0].strip(), line.split('\t')[2].strip()) for line in f]
+    data_list.sort(key=lambda game: game[0])
+    data_list.sort(key=lambda game: game[1], reverse=True)
+    return [game[0] for game in data_list]
     # Expected output of the function: the date ordered list of the titles (list of string)
     # Other expectation: The secondary ordering rule is the alphabetical ordering of the titles.
     #   So if there are titles from the same year, you need to order them alphabetically in ascending order.
