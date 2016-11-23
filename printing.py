@@ -48,4 +48,6 @@ def printing():
             print("   " + line)
         print("B-3.", reports.when_was_top_sold_fps(file_name))
 
-printing()
+
+if __name__ == "__main__":
+    printing()
