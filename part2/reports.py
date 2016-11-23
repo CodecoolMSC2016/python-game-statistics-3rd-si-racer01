@@ -25,7 +25,9 @@ def get_selling_avg(file_name):  # 3. What is the average selling?
 
 
 def count_longest_title(file_name):  # 4. How many characters long is the longest title?
-    return int()
+    with open(file_name) as f:
+        max_title_length = max([len(line.split('\t')[0].strip()) for line in f])
+    return max_title_length
 
 
 def get_date_avg(file_name):  # 5. What is the average of the release dates?

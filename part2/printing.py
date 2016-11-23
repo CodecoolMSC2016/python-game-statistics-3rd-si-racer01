@@ -34,6 +34,7 @@ def printing():
         print("1.", reports.get_most_played(file_name))
         print("2.", reports.sum_sold(file_name))
         print("2.", reports.get_selling_avg(file_name))
+        print("2.", reports.count_longest_title(file_name))
 
 if __name__ == "__main__":
     printing()
