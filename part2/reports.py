@@ -31,8 +31,10 @@ def count_longest_title(file_name):  # 4. How many characters long is the longes
 
 
 def get_date_avg(file_name):  # 5. What is the average of the release dates?
-    return int(avg_year)
-    # Other expectation: the return value must be the rounded up average
+    with open(file_name) as f:
+        release_list = [int(line.split('\t')[2].strip()) for line in f]
+    avg_year = round(sum(release_list) / len(release_list))
+    return avg_year
 
 
 def get_game(file_name, title):  # 6. What properties has a game?

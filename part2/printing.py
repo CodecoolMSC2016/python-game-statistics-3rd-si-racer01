@@ -35,6 +35,7 @@ def printing():
         print("2.", reports.sum_sold(file_name))
         print("3.", reports.get_selling_avg(file_name))
         print("4.", reports.count_longest_title(file_name))
+        print("5.", reports.get_date_avg(file_name))
 
 if __name__ == "__main__":
     printing()
