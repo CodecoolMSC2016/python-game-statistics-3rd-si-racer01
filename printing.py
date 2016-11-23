@@ -5,7 +5,6 @@
 import reports
 
 file_name = "game_stat.txt"
-year = 2009
 
 print("1.", reports.count_games(file_name))
 year = int(input("2. Which year? "))
