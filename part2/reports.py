@@ -44,4 +44,16 @@ def get_game(file_name, title):  # 6. What properties has a game?
             if current_game[0].lower() == title.strip().lower():
                 return [current_game[0], float(current_game[1]), int(current_game[2]), current_game[3], current_game[4]]
     return []
-    # Expected output of the function: a list of all the properties of the game (a list of various type).
+
+
+def count_grouped_by_genre(file_name):  # B-1. How many games are there grouped by genre?
+    return dict()
+    # Expected output of the function: a dictionary with this structure: { [genre] : [count] }
+    # Detailed description: return a dictionary where each genre is associated with the count of the games of its genre
+
+
+def get_date_ordered(file_name):  # B-2. What is the date ordered list of the games?
+    return list()
+    # Expected output of the function: the date ordered list of the titles (list of string)
+    # Other expectation: The secondary ordering rule is the alphabetical ordering of the titles.
+    #   So if there are titles from the same year, you need to order them alphabetically in ascending order.
