@@ -57,6 +57,10 @@ def export():
             for key in count_by_genre:
                 export_file.write("    " + str(count_by_genre[key]) + " " + key + '\n')
             del count_by_genre
+            export_file.write("B-2. What is the date ordered list of the games?" + '\n')
+            titles_ordered_by_date = reports.get_date_ordered(file_name)
+            for title in titles_ordered_by_date:
+                export_file.write("    " + title + '\n')
 
 if __name__ == "__main__":
     export()
