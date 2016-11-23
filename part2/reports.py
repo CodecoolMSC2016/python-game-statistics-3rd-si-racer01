@@ -38,5 +38,10 @@ def get_date_avg(file_name):  # 5. What is the average of the release dates?
 
 
 def get_game(file_name, title):  # 6. What properties has a game?
-    pass
+    with open(file_name) as f:
+        for line in f:
+            current_game = [data.strip() for data in line.split('\t')]
+            if current_game[0].lower() == title.strip().lower():
+                return [current_game[0], float(current_game[1]), int(current_game[2]), current_game[3], current_game[4]]
+    return []
     # Expected output of the function: a list of all the properties of the game (a list of various type).
