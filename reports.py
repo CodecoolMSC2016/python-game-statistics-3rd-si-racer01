@@ -55,3 +55,15 @@ def sort_abc(file_name):  # B-1. What is the alphabetical ordered list of the ti
                 title_list[index - 1], title_list[index] = title_list[index], title_list[index - 1]
                 ordered = False
     return title_list
+
+
+def get_genres(file_name):  # B-2. What are the genres?
+    """ Returns a sorted list of the existing genres in the stat file """
+    genre_list = []
+    with open(file_name) as f:
+        for line in f:
+            genre = line.split('\t')[3].strip()
+            if genre not in genre_list:
+                genre_list.append(genre)
+    genre_list.sort(key=lambda genre: genre.lower())
+    return genre_list

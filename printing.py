@@ -43,5 +43,8 @@ def printing():
         print("B-1. Sorted titles: ")
         for line in reports.sort_abc(file_name):
             print("   " + line)
+        print("B-2. Genres:")
+        for line in reports.get_genres(file_name):
+            print("   " + line)
 
 printing()
