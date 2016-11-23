@@ -44,6 +44,7 @@ def get_line_number_by_title(file_name, title):  # 5. What is the line number of
 
 
 def sort_abc(file_name):  # B-1. What is the alphabetical ordered list of the titles?
+    """ Returns a sorted list of the titles """
     with open(file_name) as f:
         title_list = [line.split('\t')[0].strip() for line in f]
     ordered = False
