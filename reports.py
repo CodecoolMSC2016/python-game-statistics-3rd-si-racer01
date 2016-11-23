@@ -40,5 +40,4 @@ def get_line_number_by_title(file_name, title):  # 5. What is the line number of
     """ Returns which row in the given file is the given game by title """
     with open(file_name) as f:
         data_list = [line.lower().split('\t')[0].strip() for line in f]
-        pass
     return data_list.index(title.lower()) + 1
