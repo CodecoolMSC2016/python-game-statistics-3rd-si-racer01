@@ -50,6 +50,7 @@ def export():
             for line in reports.get_genres(file_name):
                 export_file.write("   " + line + '\n')
             export_file.write("B-3. question: " + str(reports.when_was_top_sold_fps(file_name)) + '\n')
+        print("Exported answers into export.txt")
 
 if __name__ == "__main__":
     export()

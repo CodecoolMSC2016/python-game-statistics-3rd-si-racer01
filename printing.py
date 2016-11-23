@@ -42,10 +42,10 @@ def printing():
         # BONUS
         print("B-1. Sorted titles: ")
         for line in reports.sort_abc(file_name):
-            print("   " + line)
+            print("  ", line)
         print("B-2. Genres:")
         for line in reports.get_genres(file_name):
-            print("   " + line)
+            print("  ", line)
         print("B-3.", reports.when_was_top_sold_fps(file_name))
 
 

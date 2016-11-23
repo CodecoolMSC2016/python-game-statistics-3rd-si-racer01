@@ -61,6 +61,7 @@ def export():
             titles_ordered_by_date = reports.get_date_ordered(file_name)
             for title in titles_ordered_by_date:
                 export_file.write("    " + title + '\n')
+        print("Exported answers into export.txt")
 
 if __name__ == "__main__":
     export()
