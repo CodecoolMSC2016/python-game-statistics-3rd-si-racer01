@@ -6,6 +6,10 @@ import reports
 
 
 def check_file(file_name, fallback_file_name=""):
+    """
+    It returns the file_name if the file exists, if not, then it returns the fallback_file_name if that exists.
+    If neither of them exists, it raises a FileNotFoundError
+    """
     try:
         f = open(file_name)
     except FileNotFoundError as e:
